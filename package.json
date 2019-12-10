@@ -1,7 +1,7 @@
 {
-  "name": "svelte-starter-postcss",
+  "name": "@sergeylarionov/dyno-game",
   "version": "1.0.0",
-  "description": "A starter for bulding Svelte web apps, with PostCSS support.",
+  "description": "A dyno game using svelte",
   "main": " ",
   "scripts": {
     "build": "rollup -c",
@@ -14,17 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noprodev/svelte-starter-postcss.git"
+    "url": "https://gitlab.com/sergey-larionov/dino-game"
   },
   "keywords": [
-    "Svelte",
-    "starter",
-    "PostCSS"
+    "Dyno"
   ],
-  "author": "noprodev",
+  "author": "Sergey Larionov <sergey.larionov@pm.me>",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/noprodev/svelte-starter-postcss/issues"
+    "url": "https://gitlab.com/sergey-larionov/dino-game/issues"
   },
   "homepage": "https://github.com/noprodev/svelte-starter-postcss#readme",
   "devDependencies": {
@@ -54,5 +52,9 @@
     "svelte-preprocess-postcss": "^1.0.0",
     "tailwindcss": "^1.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "get-pixels": "^3.3.2",
+    "pngjs": "^3.4.0",
+    "rollup-plugin-svg-import": "^1.2.0"
+  }
 }
