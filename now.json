@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": "https://dyno.dev-exp.io",
+  "alias": "dyno.dev-exp.io",
   "builds": [
     {
       "src": "package.json",

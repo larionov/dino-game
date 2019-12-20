@@ -1,12 +1,11 @@
 import { writable } from "svelte/store";
-//import {tweened} from 'svelte/motion';
-//import { linear } from 'svelte/easing';
-
-//Insert store variables here
 export const count = writable(0);
 
 export const posY = writable(-300);
-/*tweened(1000, {
-  duration: 20,
-  easing: linear
-});*/
+export const posX = writable(-500);
+
+export const isSettingsOpen = writable(false);
+
+export const gravity = writable(10000);
+export const jumpVector = writable(-2500);
+export const frameLength = writable(0);
