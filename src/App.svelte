@@ -5,7 +5,6 @@
   import Settings from './components/Settings.svelte';
   import { isSettingsOpen, frameLength } from './store/store.js';
 
-
   const onSettingsClick = () => {
 
       $isSettingsOpen = !$isSettingsOpen;

@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "get-pixels": "^3.3.2",
+    "howler": "^2.1.2",
     "pngjs": "^3.4.0",
     "rollup-plugin-svg-import": "^1.2.0"
   }

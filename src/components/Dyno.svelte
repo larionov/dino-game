@@ -1,4 +1,5 @@
 <script>
+  import {Howl, Howler} from 'howler';
   import Character from './Character.svelte';
   import Ground from './Ground.svelte';
   import { posY, posX, gravity, jumpVector, frameLength } from '../store/store.js';
@@ -17,7 +18,20 @@
   let jumpStart = 0;
   let prevTime = 0;
 
+  let canJump = true;
+  let jumpsLimit = 2;
+  let jumpsCount = 0;
+
+  let disableClick = false;
+
   $posY = floorY;
+
+  const soundCache = {};
+
+  const soundJump = new Howl({
+      src: ['/assets/footstep05.ogg'],
+      volume: 0.2,
+  });
 
   const render = (timestamp) => {
       if (!prevTime) prevTime = timestamp;
@@ -32,6 +46,7 @@
           speedVector = 0;
           $posY = floorY;
           isJumping = false;
+          jumpsCount = 0;
       }
       prevTime = timestamp;
       requestAnimationFrame(render);
@@ -40,11 +55,25 @@
   requestAnimationFrame(render);
 
   const handleKeydown = (e) => {
-      // console.log(e);
+      if (e.type === 'touchstart') disableClick = true;
+      if (e.type === 'click' && disableClick) return;
+
+      if (!canJump) return;
+      if (jumpsCount >= jumpsLimit) return;
+
       if (e.type === 'touchstart' || e.type === 'click' || e.code === 'Space') {
           speedVector = $jumpVector;
+          jumpsCount = jumpsCount + 1;
           prevTime = 0;
+          canJump = false;
+          soundJump.play();
       }
+      if (e.type === 'click') {
+          canJump = true;
+      }
+  };
+  const handleKeyup = (e) => {
+      canJump = true;
   };
 
   $: width = windowWidth < 800 ? 800 : windowWidth;
@@ -58,11 +87,15 @@
   bind:innerWidth={windowWidth}
   bind:innerHeight={windowHeight}
   on:keydown={handleKeydown}
+  on:keyup={handleKeyup}
   on:click={handleKeydown}
   on:touchstart={handleKeydown}
+  on:touchend={handleKeyup}
+
+
 />
 <div class="flex items-center justify-center h-screen bg-gray-200">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-screen h-screen" viewBox={`0 0 ${width} ${height}`} shape-rendering="crispEdges">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-screen h-screen" viewBox={`0 0 ${width || 0} ${height || 0}`} shape-rendering="crispEdges">
 
     <defs>
       <pattern id="smallGrid" width="50" height="50" patternUnits="userSpaceOnUse">
