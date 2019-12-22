@@ -57,6 +57,12 @@
   	node.parentNode.removeChild(node);
   }
 
+  function detach_between(before, after) {
+  	while (before.nextSibling && before.nextSibling !== after) {
+  		before.parentNode.removeChild(before.nextSibling);
+  	}
+  }
+
   function element(name) {
   	return document.createElement(name);
   }
@@ -334,7 +340,7 @@
   	}
   }
 
-  var Sprites = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!-- Created with Inkscape (http://www.inkscape.org/) -->\n\n<svg\n   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n   xmlns:cc=\"http://creativecommons.org/ns#\"\n   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\n   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\n   version=\"1.1\"\n   id=\"svg184\"\n   width=\"8703.999\"\n   height=\"512\"\n   viewBox=\"0 0 8703.999 512\"\n   sodipodi:docname=\"Sprites-project.svg\"\n   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n  <metadata\n     id=\"metadata190\">\n    <rdf:RDF>\n      <cc:Work\n         rdf:about=\"\">\n        <dc:format>image/svg+xml</dc:format>\n        <dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />\n        <dc:title></dc:title>\n      </cc:Work>\n    </rdf:RDF>\n  </metadata>\n  <defs\n     id=\"defs188\">\n    <g\n       id=\"running\"\n       inkscape:label=\"#g4692\">\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 208,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4599\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 56 56 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 32 16 v 8 8 H 8 0 v 8 8 h 24 24 v -8 -8 h 80 80 v 8 8 h 24 24 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4597\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 208,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4477\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4475\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4473\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"stone\">\n      <path\n         inkscape:connector-curvature=\"0\"\n         id=\"path4156\"\n         d=\"m 5648,456.66669 v -48 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -32 -32 h 8 8 v -16 -16 h 16 16 v -8 -8 h 56 56 v 8 8 h 16 16 v 8 8 h 8 8 v 32 32 h 8 8 v 40 40 h 8 8 v 16 16 h 8 8 v 16 16 h 8 8 v 88 88 h -184 -184 z\"\n         style=\"fill:#8a8d8b\" />\n    </g>\n    <g\n       id=\"stone-scared\">\n      <path\n         inkscape:connector-curvature=\"0\"\n         id=\"path4152\"\n         d=\"m 5136,464.66669 v -40 h 8 8 v -24 -24 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -32 -32 h 8 8 v -16 -16 h 16 16 v -8 -8 h 56 56 v 8 8 h 16 16 v 8 8 h 8 8 v 32 32 h 8 8 v 48 48 h 8 8 v 16 16 h 8 8 v 16 16 h 8 8 v 80 80 h -184 -184 z m 224,-144 v -56 h -8 -8 v -8 -8 h -24 -24 v 24 24 h -8 -8 v 32 32 h 8 8 v 8 8 h 32 32 z m -48,32 v -8 h -8 -8 v -16 -16 h 8 8 v -24 -24 h 8 8 v 8 8 h 8 8 v 40 40 h -16 -16 z m -16,-144 v -24 h -24 -24 v 24 24 h 24 24 z m 112,0 v -24 h -24 -24 v 24 24 h 24 24 z\"\n         style=\"fill:#5c645e\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5296,248.66669 v 24 24 h -8 -8 v 32 32 h 8 8 v 8 8 h 32 32 v -56 -56 h -8 -8 v -8 -8 h -24 z m 16,16 h 8 8 v 8 8 h 8 8 v 40 40 h -16 -16 v -8 -8 h -8 -8 v -16 -16 h 8 8 v -24 z\"\n         id=\"path4551\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5376,200.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4549\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5264,200.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4547\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4824\"\n       id=\"bird-flap\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7952,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4678\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7824,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4672\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7872,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h 8 8 v -8 -8 h -8 -8 v -8 -8 h -32 z\"\n         id=\"path4660\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 7952,314.66669 v 8 8 h 32 32 v -8 -8 h -32 z\"\n         id=\"path4633\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7856,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4535\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7840,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4533\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7856,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4531\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7872,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4529\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7904,394.66669 v -24 -24 h -16 -16 v 8 8 h 8 8 v 16 16 h 8 z\"\n         id=\"path4527\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7936,394.66669 h -16 -16 v 8 8 h 16 16 v -8 z\"\n         id=\"path4525\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7968,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4523\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7872,282.66669 v 8 8 h 32 32 v 8 8 h 40 40 v 8 8 h -40 -40 v 32 32 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -48 z\"\n         id=\"path4521\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4810\"\n       id=\"bird2-scared\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7440,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4676\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7312,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4670\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7360,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h -8 -8 v -16 -16 h -24 z\"\n         id=\"path4658\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 7456,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4631\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7424,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4545\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7328,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4519\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7456,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4517\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7424,394.66669 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -40 -40 v 32 z\"\n         id=\"path4515\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7392,394.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4513\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,346.66669 v 8 8 h 8 8 v 16 16 h 8 8 v -24 -24 h -16 z\"\n         id=\"path4511\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7344,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4509\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7344,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4507\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4505\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,282.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4503\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird-scared\"\n       inkscape:label=\"#g4794\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6928,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4674\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6800,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4668\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6848,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h -8 -8 v -16 -16 h -24 z\"\n         id=\"path4656\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 6944,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4629\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6912,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4543\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6816,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4501\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6944,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4499\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6912,394.66669 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -40 -40 v 32 z\"\n         id=\"path4497\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6880,394.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4495\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,346.66669 v 8 8 h 8 8 v 16 16 h 8 8 v -24 -24 h -16 z\"\n         id=\"path4493\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6832,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4491\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6832,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4489\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4487\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,282.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4485\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"running2\"\n       inkscape:label=\"#g4732\">\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3280,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4621\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3200,186.66669 v 8 8 h -8 -8 v 56 56 h -40 -40 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 h -16 -16 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4619\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3280,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4483\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3264,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4481\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3248,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4479\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4685\"\n       id=\"idle\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 208,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4595\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 56 56 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 24 24 h 8 8 v 8 8 h 16 16 v -16 -16 h 40 40 v 16 16 h 16 16 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4150\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 208,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4471\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4469\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4467\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"crying\"\n       inkscape:label=\"#g4725\"\n       >\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 240,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4654\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 224,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4652\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 192,282.66669 v 8 8 h 8 8 v 8 8 h 8 8 v -16 -16 h -16 z\"\n         id=\"path4650\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 112,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4648\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 112,282.66669 v 16 16 h 8 8 v -8 -8 h 8 8 v -8 -8 h -16 z\"\n         id=\"path4646\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 32 32 h 24 24 v 8 8 h -8 -8 v 8 8 h -8 -8 v 8 8 h -8 -8 v 8 8 h -8 -8 v -8 -8 H 64 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 32 16 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -16 -16 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 24 24 v -32 -32 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z m 32,112 h 8 8 v 8 8 h -8 -8 v -8 z\"\n         id=\"path4617\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 160,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4541\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,266.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4465\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 112,266.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4463\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"scared\"\n       inkscape:label=\"#g4714\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 172,298.66669 v 8 8 h -8 -8 v -8 -8 h -24 -24 v 8 8 H 68 28 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 28 12 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -24 z\"\n         id=\"path4615\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 172,250.66669 h 24 24 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 z\"\n         id=\"path4613\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 156,250.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4611\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 124,186.66669 v 8 8 h -8 -8 v 24 24 h 24 24 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4609\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 156,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4539\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 188,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4461\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 124,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4459\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"angry\"\n       inkscape:label=\"#g4705\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 176,298.66669 v 8 8 h -8 -8 v -8 -8 h -24 -24 v 8 8 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 16 16 h -8 -8 v 16 16 h 16 16 v -8 -8 h 8 8 v -8 -8 h 56 56 v 8 8 h 8 8 v 8 8 h 16 16 v -16 -16 h -8 -8 v -32 -32 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -24 z\"\n         id=\"path4607\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 176,250.66669 h 8 8 v -8 -8 h 8 8 v 8 8 h 8 8 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 z\"\n         id=\"path4605\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 160,250.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4603\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 24 24 h 8 8 v -8 -8 h 8 8 v 8 8 h 8 8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4601\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 160,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4537\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4457\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,250.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4455\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,234.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4453\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 144,266.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4451\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 144,250.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4449\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 128,234.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4447\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird3\"\n       inkscape:label=\"#g4769\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4752,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4666\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4832,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -8 -8 h -16 -16 v -40 -40 h -16 z\"\n         id=\"path4644\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4832,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4638\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 4896,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4627\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4768,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4445\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4800,346.66669 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -24 -24 v 8 8 h -48 z\"\n         id=\"path4443\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4784,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4441\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4784,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4439\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4800,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4437\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4864,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -56 -56 h -8 z\"\n         id=\"path4435\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4832,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4433\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird2\"\n       inkscape:label=\"#g4756\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4240,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4664\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4320,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -16 -16 h -8 -8 v 8 8 h -8 -8 v -40 -40 h -16 z\"\n         id=\"path4642\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4320,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4636\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 4384,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4625\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4272,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4431\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4256,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4429\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4272,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4427\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4288,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4425\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4352,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -8 -8 h 32 32 v 8 8 h -24 -24 v 8 8 h -48 -48 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -8 -8 v -32 -32 h -8 z\"\n         id=\"path4423\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4320,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4421\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird\"\n       inkscape:label=\"#g4744\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3728,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4662\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3808,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -16 -16 h -8 -8 v 8 8 h -8 -8 v -40 -40 h -16 z\"\n         id=\"path4640\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3808,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4154\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3872,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4623\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3760,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4419\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3744,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4417\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3760,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4415\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3776,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4413\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3840,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -8 -8 h 32 32 v 8 8 h -24 -24 v 8 8 h -48 -48 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -8 -8 v -32 -32 h -8 z\"\n         id=\"path4411\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3808,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4148\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n\n  </defs>\n  <sodipodi:namedview\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1\"\n     objecttolerance=\"10\"\n     gridtolerance=\"10\"\n     guidetolerance=\"10\"\n     inkscape:pageopacity=\"0\"\n     inkscape:pageshadow=\"2\"\n     inkscape:window-width=\"1912\"\n     inkscape:window-height=\"1049\"\n     id=\"namedview186\"\n     showgrid=\"true\"\n     showguides=\"true\"\n     inkscape:guide-bbox=\"true\"\n     fit-margin-right=\"-2.7755576e-17\"\n     fit-margin-top=\"0\"\n     fit-margin-left=\"0\"\n     fit-margin-bottom=\"0\"\n     inkscape:zoom=\"0.25\"\n     inkscape:cx=\"1627.2803\"\n     inkscape:cy=\"256.45743\"\n     inkscape:window-x=\"4\"\n     inkscape:window-y=\"27\"\n     inkscape:window-maximized=\"0\"\n     inkscape:current-layer=\"svg184\">\n    <sodipodi:guide\n       position=\"512,682.66669\"\n       orientation=\"1,0\"\n       id=\"guide214\"\n       inkscape:locked=\"false\" />\n    <inkscape:grid\n       type=\"xygrid\"\n       id=\"grid216\"\n       originx=\"0\"\n       originy=\"0\"\n       spacingx=\"512\"\n       spacingy=\"512\"\n       dotted=\"false\" />\n  </sodipodi:namedview>\n  <use xlink:href=\"#running\" />\n  <use xlink:href=\"#stone\"/>\n  <use xlink:href=\"#stone-scared\" />\n  <use xlink:href=\"#idle\"  transform=\"translate(512)\"/>\n  <use xlink:href=\"#angry\"  transform=\"translate(1024)\"/>\n  <use xlink:href=\"#scared\"  transform=\"translate(1538)\"/>\n  <use xlink:href=\"#crying\"  transform=\"translate(2048)\"/>\n  <use xlink:href=\"#bird\"/>\n  <use xlink:href=\"#bird-scared\"/>\n  <use xlink:href=\"#bird-flap\"/>\n</svg>\n";
+  var Sprites = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!-- Created with Inkscape (http://www.inkscape.org/) -->\n\n<svg\n   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n   xmlns:cc=\"http://creativecommons.org/ns#\"\n   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\n   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\n   version=\"1.1\"\n   id=\"svg184\"\n   width=\"8703.999\"\n   height=\"512\"\n   viewBox=\"0 0 8703.999 512\"\n   sodipodi:docname=\"Sprites-project.svg\"\n   inkscape:version=\"0.92.4 5da689c313, 2019-01-14\">\n  <metadata\n     id=\"metadata190\">\n    <rdf:RDF>\n      <cc:Work\n         rdf:about=\"\">\n        <dc:format>image/svg+xml</dc:format>\n        <dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />\n        <dc:title></dc:title>\n      </cc:Work>\n    </rdf:RDF>\n  </metadata>\n  <defs\n     id=\"defs188\">\n    <g\n       id=\"running\"\n       inkscape:label=\"#g4692\">\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 208,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4599\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 56 56 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 32 16 v 8 8 H 8 0 v 8 8 h 24 24 v -8 -8 h 80 80 v 8 8 h 24 24 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4597\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 208,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4477\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4475\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4473\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"stone\">\n      <path\n         inkscape:connector-curvature=\"0\"\n         id=\"path4156\"\n         d=\"m 208,456.66669 v -48 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -32 -32 h 8 8 v -16 -16 h 16 16 v -8 -8 h 56 56 v 8 8 h 16 16 v 8 8 h 8 8 v 32 32 h 8 8 v 40 40 h 8 8 v 16 16 h 8 8 v 16 16 h 8 8 v 88 88 h -184 -184 z\"\n         style=\"fill:#8a8d8b\" />\n    </g>\n    <g\n       id=\"stone-scared\">\n      <path\n         inkscape:connector-curvature=\"0\"\n         id=\"path4152\"\n         d=\"m 5136,464.66669 v -40 h 8 8 v -24 -24 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -32 -32 h 8 8 v -16 -16 h 16 16 v -8 -8 h 56 56 v 8 8 h 16 16 v 8 8 h 8 8 v 32 32 h 8 8 v 48 48 h 8 8 v 16 16 h 8 8 v 16 16 h 8 8 v 80 80 h -184 -184 z m 224,-144 v -56 h -8 -8 v -8 -8 h -24 -24 v 24 24 h -8 -8 v 32 32 h 8 8 v 8 8 h 32 32 z m -48,32 v -8 h -8 -8 v -16 -16 h 8 8 v -24 -24 h 8 8 v 8 8 h 8 8 v 40 40 h -16 -16 z m -16,-144 v -24 h -24 -24 v 24 24 h 24 24 z m 112,0 v -24 h -24 -24 v 24 24 h 24 24 z\"\n         style=\"fill:#5c645e\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5296,248.66669 v 24 24 h -8 -8 v 32 32 h 8 8 v 8 8 h 32 32 v -56 -56 h -8 -8 v -8 -8 h -24 z m 16,16 h 8 8 v 8 8 h 8 8 v 40 40 h -16 -16 v -8 -8 h -8 -8 v -16 -16 h 8 8 v -24 z\"\n         id=\"path4551\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5376,200.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4549\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 5264,200.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4547\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4824\"\n       id=\"bird-flap\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7952,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4678\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7824,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4672\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7872,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h 8 8 v -8 -8 h -8 -8 v -8 -8 h -32 z\"\n         id=\"path4660\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 7952,314.66669 v 8 8 h 32 32 v -8 -8 h -32 z\"\n         id=\"path4633\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7856,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4535\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7840,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4533\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7856,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4531\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7872,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4529\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7904,394.66669 v -24 -24 h -16 -16 v 8 8 h 8 8 v 16 16 h 8 z\"\n         id=\"path4527\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7936,394.66669 h -16 -16 v 8 8 h 16 16 v -8 z\"\n         id=\"path4525\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7968,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4523\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7872,282.66669 v 8 8 h 32 32 v 8 8 h 40 40 v 8 8 h -40 -40 v 32 32 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -48 z\"\n         id=\"path4521\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4810\"\n       id=\"bird2-scared\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7440,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4676\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7312,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4670\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 7360,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h -8 -8 v -16 -16 h -24 z\"\n         id=\"path4658\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 7456,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4631\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7424,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4545\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7328,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4519\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7456,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4517\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7424,394.66669 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -40 -40 v 32 z\"\n         id=\"path4515\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7392,394.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4513\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,346.66669 v 8 8 h 8 8 v 16 16 h 8 8 v -24 -24 h -16 z\"\n         id=\"path4511\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7344,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4509\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7344,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4507\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4505\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 7360,282.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4503\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird-scared\"\n       inkscape:label=\"#g4794\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6928,346.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4674\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6800,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4668\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 6848,298.66669 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 16 16 v 24 24 h 16 16 v -32 -32 h -8 -8 v -16 -16 h -24 z\"\n         id=\"path4656\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 6944,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4629\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6912,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4543\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6816,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4501\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6944,394.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4499\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6912,394.66669 h 8 8 v -24 -24 h 8 8 v 24 24 h 8 8 v -24 -24 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -40 -40 v 32 z\"\n         id=\"path4497\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6880,394.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4495\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,346.66669 v 8 8 h 8 8 v 16 16 h 8 8 v -24 -24 h -16 z\"\n         id=\"path4493\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6832,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4491\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6832,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4489\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4487\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 6848,282.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4485\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"running2\"\n       inkscape:label=\"#g4732\">\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3280,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4621\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3200,186.66669 v 8 8 h -8 -8 v 56 56 h -40 -40 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 h -16 -16 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4619\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3280,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4483\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3264,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4481\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3248,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4479\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       inkscape:label=\"#g4685\"\n       id=\"idle\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 208,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4595\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 56 56 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 24 24 h 8 8 v 8 8 h 16 16 v -16 -16 h 40 40 v 16 16 h 16 16 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 8 8 v 8 8 h 8 8 v -8 -8 h 8 8 v -40 -40 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4150\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 208,298.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4471\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4469\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,282.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4467\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"crying\"\n       inkscape:label=\"#g4725\"\n       >\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 240,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4654\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 224,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4652\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 192,282.66669 v 8 8 h 8 8 v 8 8 h 8 8 v -16 -16 h -16 z\"\n         id=\"path4650\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 112,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4648\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 112,282.66669 v 16 16 h 8 8 v -8 -8 h 8 8 v -8 -8 h -16 z\"\n         id=\"path4646\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 32 32 h 24 24 v 8 8 h -8 -8 v 8 8 h -8 -8 v 8 8 h -8 -8 v 8 8 h -8 -8 v -8 -8 H 64 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 32 16 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -16 -16 h -8 -8 v -8 -8 h -8 -8 v -8 -8 h 24 24 v -32 -32 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 24 h -8 -8 v -24 -24 h -8 -8 v -8 -8 h -8 z m 32,112 h 8 8 v 8 8 h -8 -8 v -8 z\"\n         id=\"path4617\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 160,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4541\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 176,266.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4465\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 112,266.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4463\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"scared\"\n       inkscape:label=\"#g4714\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 172,298.66669 v 8 8 h -8 -8 v -8 -8 h -24 -24 v 8 8 H 68 28 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 8 8 H 28 12 v 16 16 h 24 24 v -8 -8 h 72 72 v 8 8 h 24 24 v -16 -16 h -16 -16 v -24 -24 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -24 z\"\n         id=\"path4615\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 172,250.66669 h 24 24 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 z\"\n         id=\"path4613\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 156,250.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4611\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 124,186.66669 v 8 8 h -8 -8 v 24 24 h 24 24 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4609\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 156,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4539\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 188,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4461\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 124,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4459\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"angry\"\n       inkscape:label=\"#g4705\"\n       >\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 176,298.66669 v 8 8 h -8 -8 v -8 -8 h -24 -24 v 8 8 H 72 32 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 8 8 v 16 16 h -8 -8 v 16 16 h 16 16 v -8 -8 h 8 8 v -8 -8 h 56 56 v 8 8 h 8 8 v 8 8 h 16 16 v -16 -16 h -8 -8 v -32 -32 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -24 z\"\n         id=\"path4607\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 176,250.66669 h 8 8 v -8 -8 h 8 8 v 8 8 h 8 8 v -24 -24 h -8 -8 v -8 -8 h -8 -8 v 8 8 h -8 -8 v 24 z\"\n         id=\"path4605\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 160,250.66669 v 24 24 h 8 8 v -24 -24 h -8 z\"\n         id=\"path4603\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 128,186.66669 v 8 8 h -8 -8 v 24 24 h 8 8 v -8 -8 h 8 8 v 8 8 h 8 8 v -24 -24 h -8 -8 v -8 -8 h -8 z\"\n         id=\"path4601\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 160,298.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4537\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,266.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4457\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,250.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4455\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 192,234.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4453\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 144,266.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4451\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 144,250.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4449\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 128,234.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4447\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird3\"\n       inkscape:label=\"#g4769\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4752,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4666\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4832,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -8 -8 h -16 -16 v -40 -40 h -16 z\"\n         id=\"path4644\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4832,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4638\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 4896,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4627\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4768,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4445\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4800,346.66669 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v 8 8 h 24 24 v 8 8 h -24 -24 v 8 8 h -48 z\"\n         id=\"path4443\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4784,330.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4441\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4784,314.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4439\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4800,298.66669 h -8 -8 v 8 8 h 8 8 v -8 z\"\n         id=\"path4437\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4864,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -56 -56 h -8 z\"\n         id=\"path4435\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4832,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4433\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird2\"\n       inkscape:label=\"#g4756\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4240,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4664\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4320,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -16 -16 h -8 -8 v 8 8 h -8 -8 v -40 -40 h -16 z\"\n         id=\"path4642\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 4320,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4636\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 4384,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4625\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4272,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4431\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4256,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4429\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4272,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4427\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4288,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4425\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4352,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -8 -8 h 32 32 v 8 8 h -24 -24 v 8 8 h -48 -48 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -8 -8 v -32 -32 h -8 z\"\n         id=\"path4423\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 4320,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4421\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n    <g\n       id=\"bird\"\n       inkscape:label=\"#g4744\">\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3728,314.66669 v 8 8 h 8 8 v -8 -8 h -8 z\"\n         id=\"path4662\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3808,250.66669 v 40 40 h -8 -8 v -16 -16 h -8 -8 v 8 8 h -8 -8 v 8 8 h 8 8 v 8 8 h 48 48 v -16 -16 h -8 -8 v 8 8 h -8 -8 v -40 -40 h -16 z\"\n         id=\"path4640\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#00fd31\"\n         d=\"m 3808,218.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4154\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#f70000\"\n         d=\"m 3872,314.66669 v 8 8 h 24 24 v -8 -8 h -24 z\"\n         id=\"path4623\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3760,314.66669 h 8 8 v -8 -8 h -8 -8 v 8 z\"\n         id=\"path4419\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3744,330.66669 h -8 -8 v -8 -8 h 8 8 v -8 -8 h -16 -16 v 24 24 h 16 16 v -8 z\"\n         id=\"path4417\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3760,330.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4415\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3776,346.66669 v -8 -8 h -8 -8 v 8 8 h 8 z\"\n         id=\"path4413\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3840,218.66669 v 8 8 h -16 -16 v -8 -8 h -8 -8 v 32 32 h -8 -8 v 8 8 h 8 8 v 16 16 h 8 8 v -40 -40 h 16 16 v 40 40 h 8 8 v -8 -8 h 32 32 v 8 8 h -24 -24 v 8 8 h -48 -48 v 8 8 h 56 56 v -8 -8 h 24 24 v -24 -24 h -32 -32 v -8 -8 h -8 -8 v -32 -32 h -8 z\"\n         id=\"path4411\"\n         inkscape:connector-curvature=\"0\" />\n      <path\n         style=\"fill:#000000\"\n         d=\"m 3808,202.66669 v 8 8 h 16 16 v -8 -8 h -16 z\"\n         id=\"path4148\"\n         inkscape:connector-curvature=\"0\" />\n    </g>\n\n  </defs>\n  <sodipodi:namedview\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1\"\n     objecttolerance=\"10\"\n     gridtolerance=\"10\"\n     guidetolerance=\"10\"\n     inkscape:pageopacity=\"0\"\n     inkscape:pageshadow=\"2\"\n     inkscape:window-width=\"1912\"\n     inkscape:window-height=\"1049\"\n     id=\"namedview186\"\n     showgrid=\"true\"\n     showguides=\"true\"\n     inkscape:guide-bbox=\"true\"\n     fit-margin-right=\"-2.7755576e-17\"\n     fit-margin-top=\"0\"\n     fit-margin-left=\"0\"\n     fit-margin-bottom=\"0\"\n     inkscape:zoom=\"0.25\"\n     inkscape:cx=\"1627.2803\"\n     inkscape:cy=\"256.45743\"\n     inkscape:window-x=\"4\"\n     inkscape:window-y=\"27\"\n     inkscape:window-maximized=\"0\"\n     inkscape:current-layer=\"svg184\">\n    <sodipodi:guide\n       position=\"512,682.66669\"\n       orientation=\"1,0\"\n       id=\"guide214\"\n       inkscape:locked=\"false\" />\n    <inkscape:grid\n       type=\"xygrid\"\n       id=\"grid216\"\n       originx=\"0\"\n       originy=\"0\"\n       spacingx=\"512\"\n       spacingy=\"512\"\n       dotted=\"false\" />\n  </sodipodi:namedview>\n  <use xlink:href=\"#running\" />\n  <use xlink:href=\"#stone\"/>\n  <use xlink:href=\"#stone-scared\" />\n  <use xlink:href=\"#idle\"  transform=\"translate(512)\"/>\n  <use xlink:href=\"#angry\"  transform=\"translate(1024)\"/>\n  <use xlink:href=\"#scared\"  transform=\"translate(1538)\"/>\n  <use xlink:href=\"#crying\"  transform=\"translate(2048)\"/>\n  <use xlink:href=\"#bird\"/>\n  <use xlink:href=\"#bird-scared\"/>\n  <use xlink:href=\"#bird-flap\"/>\n</svg>\n";
 
   var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -3490,146 +3496,6 @@
   var howler_1 = howler.Howler;
   var howler_2 = howler.Howl;
 
-  /* src/components/Character.svelte generated by Svelte v3.4.0 */
-
-  const file = "src/components/Character.svelte";
-
-  function create_fragment(ctx) {
-  	var g, use, use_xlink_href_value, g_transform_value;
-
-  	return {
-  		c: function create() {
-  			g = svg_element("g");
-  			use = svg_element("use");
-  			xlink_attr(use, "xlink:href", use_xlink_href_value = ctx.isJumping ? '#running' : ctx.cycle[ctx.current]);
-  			attr(use, "transform", `scale(0.5, 0.5)`);
-  			add_location(use, file, 12, 2, 231);
-  			attr(g, "transform", g_transform_value = `translate(100, ${ctx.$posY})`);
-  			add_location(g, file, 11, 0, 186);
-  		},
-
-  		l: function claim(nodes) {
-  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-  		},
-
-  		m: function mount(target, anchor) {
-  			insert(target, g, anchor);
-  			append(g, use);
-  		},
-
-  		p: function update(changed, ctx) {
-  			if ((changed.isJumping || changed.current) && use_xlink_href_value !== (use_xlink_href_value = ctx.isJumping ? '#running' : ctx.cycle[ctx.current])) {
-  				xlink_attr(use, "xlink:href", use_xlink_href_value);
-  			}
-
-  			if ((changed.$posY) && g_transform_value !== (g_transform_value = `translate(100, ${ctx.$posY})`)) {
-  				attr(g, "transform", g_transform_value);
-  			}
-  		},
-
-  		i: noop,
-  		o: noop,
-
-  		d: function destroy(detaching) {
-  			if (detaching) {
-  				detach(g);
-  			}
-  		}
-  	};
-  }
-
-  function instance($$self, $$props, $$invalidate) {
-  	let $posY;
-
-  	let { posY, isJumping } = $$props; validate_store(posY, 'posY'); subscribe($$self, posY, $$value => { $posY = $$value; $$invalidate('$posY', $posY); });
-
-    let cycle = ['#idle', '#running'];
-    let current = 0;
-
-    setInterval(() => { const $$result = current = (current + 1) % cycle.length; $$invalidate('current', current); return $$result; }, 100);
-
-  	$$self.$set = $$props => {
-  		if ('posY' in $$props) $$invalidate('posY', posY = $$props.posY);
-  		if ('isJumping' in $$props) $$invalidate('isJumping', isJumping = $$props.isJumping);
-  	};
-
-  	return { posY, isJumping, cycle, current, $posY };
-  }
-
-  class Character extends SvelteComponentDev {
-  	constructor(options) {
-  		super(options);
-  		init(this, options, instance, create_fragment, safe_not_equal, ["posY", "isJumping"]);
-
-  		const { ctx } = this.$$;
-  		const props = options.props || {};
-  		if (ctx.posY === undefined && !('posY' in props)) {
-  			console.warn("<Character> was created without expected prop 'posY'");
-  		}
-  		if (ctx.isJumping === undefined && !('isJumping' in props)) {
-  			console.warn("<Character> was created without expected prop 'isJumping'");
-  		}
-  	}
-
-  	get posY() {
-  		throw new Error("<Character>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-  	}
-
-  	set posY(value) {
-  		throw new Error("<Character>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-  	}
-
-  	get isJumping() {
-  		throw new Error("<Character>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-  	}
-
-  	set isJumping(value) {
-  		throw new Error("<Character>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-  	}
-  }
-
-  /* src/components/Ground.svelte generated by Svelte v3.4.0 */
-
-  const file$1 = "src/components/Ground.svelte";
-
-  function create_fragment$1(ctx) {
-  	var path;
-
-  	return {
-  		c: function create() {
-  			path = svg_element("path");
-  			attr(path, "d", "M387.996 0l-.381.53-.382.528h-.825l-.38.53-.382.529H0v.529h386.175l.381-.53.382-.528h.824l.382-.53.381-.529h2.052l.742.794.741.794h.846v.529h8.202v.529h.794v.529h7.144v-.529h.794v-.529h146.198l.38-.53.382-.529h.825l.381-.529.382-.529h2.052l.741.794.742.794h.846v.529h5.968l.382-.53.381-.529h.825l.381-.529.382-.529h2.052l.741.794.742.794h.846v.529H635v-.529h-59.002v-.53h-.846l-.742-.793-.74-.794h-3.112l-.38.53-.382.528h-.825l-.381.53-.382.529h-4.91v-.53h-.846l-.742-.793-.74-.794h-3.112l-.38.53-.382.528h-.825l-.381.53-.382.529H409.046v.529h-.794v.529h-5.556v-.529h-.794v-.529h-8.467v-.529h-.846l-.741-.794-.742-.794h-1.555zM29.104 3.704v.529h1.588v-.529h-.794zm50.8 0v.529h2.117v-.529h-1.058zm39.688 0v.529h1.587v-.529h-.794zm67.204 0v.529h2.117v-.529h-1.059zm117.475 0v.529h2.117v-.529h-1.059zm42.333 0v.529h1.588v-.529h-.794zm50.8 0v.529h2.117v-.529h-1.058zm39.688 0v.529h1.587v-.529h-.794zm67.204 0v.529h2.117v-.529h-1.059zm117.475 0v.529h2.117v-.529h-1.059zm-618.596.53v.528h2.117v-.529H4.233zm41.804 0v.528h.529v-.529h-.264zm8.996 0v.528h1.058v-.529h-.529zm42.333 0v.528h1.059v-.529h-.53zm17.463 0v.528h.529v-.529h-.265zm16.404 0v.528h.529v-.529h-.264zm39.688 0v.528h1.058v-.529h-.53zm21.695 0v.528h.53v-.529h-.265zm10.055 0v.528h1.587v-.529h-.794zm30.162 0v.528h1.588v-.529h-.794zm31.22 0v.528h1.588v-.529h-.793zm25.4 0v.528h.53v-.529h-.265zm2.118 0v.528h1.058v-.529h-.53zm7.408 0v.528h1.587v-.529h-.793zm22.754 0v.528h2.117v-.529h-1.059zm41.804 0v.528h.529v-.529h-.264zm8.996 0v.528h1.058v-.529h-.529zm42.333 0v.528h1.059v-.529h-.53zm17.463 0v.528h.529v-.529h-.265zm16.404 0v.528h.529v-.529h-.264zm39.688 0v.528h1.058v-.529h-.53zm21.695 0v.528h.53v-.529h-.265zm10.055 0v.528h1.587v-.529h-.794zm30.162 0v.528h1.588v-.529h-.794zm31.22 0v.528h1.588v-.529h-.793zm25.4 0v.528h.53v-.529h-.265zm2.117 0v.528h1.059v-.529h-.53zm7.409 0v.528h1.587v-.529h-.793zm-493.183.529v.529h.529v-.529h-.265zm35.983 0v.529h.529v-.529h-.265zm58.737 0v.529h1.059v-.529h-.53zm42.863 0v.529h.529v-.529h-.265zm12.7 0v.529h1.587v-.529h-.793zm167.216 0v.529h.53v-.529h-.265zm35.984 0v.529h.529v-.529h-.265zm58.737 0v.529h1.059v-.529h-.53zm42.863 0v.529h.529v-.529h-.265zm12.7 0v.529h1.587v-.529h-.793zm-568.325.529v.529h.529v-.529h-.265zm15.346 0v.529H38.1v-.529h-.53zm10.583 0v.529h2.117v-.529h-1.059zm24.87 0v.529h1.06v-.529h-.53zm21.697 0v.529h.529v-.529h-.265zm5.291 0v.529h1.588v-.529h-.794zm39.159 0v.529h.529v-.529h-.265zm2.116 0v.529h1.059v-.529h-.53zm8.467 0v.529h1.588v-.529h-.794zm96.308 0v.529h1.059v-.529h-.53zm57.15 0v.529h.529v-.529h-.264zm36.513 0v.529h.529v-.529h-.265zm15.346 0v.529h1.058v-.529h-.53zm10.583 0v.529h2.117v-.529h-1.059zm24.87 0v.529h1.06v-.529h-.53zm21.697 0v.529h.529v-.529h-.265zm5.291 0v.529h1.588v-.529h-.794zm39.159 0v.529h.529v-.529h-.265zm2.116 0v.529h1.059v-.529h-.53zm8.467 0v.529h1.587v-.529h-.793zm96.308 0v.529h1.059v-.529h-.53zm57.15 0v.529h.529v-.529h-.264zM0 5.82v.529h2.117V5.82H1.058zm7.408 0v.529h1.059V5.82h-.53zm17.992 0v.529h2.117V5.82h-1.059zm39.158 0v.529h.53V5.82h-.265zm112.713 0v.529h1.587V5.82h-.793zm42.862 0v.529h2.117V5.82h-1.058zm6.35 0v.529h.53V5.82h-.265zm50.8 0v.529h1.059V5.82h-.53zm33.867 0v.529h.529V5.82h-.264zm6.35 0v.529h2.117V5.82h-1.059zm7.408 0v.529h1.059V5.82h-.53zm17.992 0v.529h2.117V5.82h-1.059zm39.158 0v.529h.529V5.82h-.264zm112.713 0v.529h1.587V5.82h-.793zm42.862 0v.529h2.117V5.82h-1.058zm6.35 0v.529h.529V5.82h-.264zm50.8 0v.529h1.059V5.82h-.53zm33.867 0v.529h.529V5.82h-.264z");
-  			attr(path, "fill", "#525252");
-  			add_location(path, file$1, 0, 0, 0);
-  		},
-
-  		l: function claim(nodes) {
-  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-  		},
-
-  		m: function mount(target, anchor) {
-  			insert(target, path, anchor);
-  		},
-
-  		p: noop,
-  		i: noop,
-  		o: noop,
-
-  		d: function destroy(detaching) {
-  			if (detaching) {
-  				detach(path);
-  			}
-  		}
-  	};
-  }
-
-  class Ground extends SvelteComponentDev {
-  	constructor(options) {
-  		super(options);
-  		init(this, options, null, create_fragment$1, safe_not_equal, []);
-  	}
-  }
-
   function noop$1() {}
 
   function safe_not_equal$1(a, b) {
@@ -3672,32 +3538,546 @@
   }
 
   const posY = writable(-300);
-  const posX = writable(-500);
+  const posX = writable(0);
 
   const isSettingsOpen = writable(false);
 
   const gravity = writable(10000);
   const jumpVector = writable(-2500);
   const frameLength = writable(0);
+  const speedX = writable(800);
+  const width = writable(100);
+  const height = writable(100);
+
+  /* src/components/Character.svelte generated by Svelte v3.4.0 */
+
+  const file = "src/components/Character.svelte";
+
+  function create_fragment(ctx) {
+  	var g, use, use_xlink_href_value, g_transform_value;
+
+  	return {
+  		c: function create() {
+  			g = svg_element("g");
+  			use = svg_element("use");
+  			xlink_attr(use, "xlink:href", use_xlink_href_value = ctx.isJumping ? '#running' : ctx.cycle[ctx.current]);
+  			attr(use, "transform", `scale(0.5, 0.5)`);
+  			add_location(use, file, 22, 2, 489);
+  			attr(g, "transform", g_transform_value = `translate(100, ${ctx.$posY})`);
+  			add_location(g, file, 21, 0, 444);
+  		},
+
+  		l: function claim(nodes) {
+  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, g, anchor);
+  			append(g, use);
+  		},
+
+  		p: function update(changed, ctx) {
+  			if ((changed.isJumping || changed.current) && use_xlink_href_value !== (use_xlink_href_value = ctx.isJumping ? '#running' : ctx.cycle[ctx.current])) {
+  				xlink_attr(use, "xlink:href", use_xlink_href_value);
+  			}
+
+  			if ((changed.$posY) && g_transform_value !== (g_transform_value = `translate(100, ${ctx.$posY})`)) {
+  				attr(g, "transform", g_transform_value);
+  			}
+  		},
+
+  		i: noop,
+  		o: noop,
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach(g);
+  			}
+  		}
+  	};
+  }
+
+  function lerp (start, end, amt){
+      return (1-amt)*start+amt*end
+  }
+
+  function instance($$self, $$props, $$invalidate) {
+  	let $speedX, $posY;
+
+  	validate_store(speedX, 'speedX');
+  	subscribe($$self, speedX, $$value => { $speedX = $$value; $$invalidate('$speedX', $speedX); });
+
+  	let { posY, isJumping } = $$props; validate_store(posY, 'posY'); subscribe($$self, posY, $$value => { $posY = $$value; $$invalidate('$posY', $posY); });
+
+    let cycle = ['#idle', '#running'];
+    let current = 0;
+
+    function switchLegs() {
+        $$invalidate('current', current = (current + 1) % cycle.length);
+        const timeout = Math.floor(lerp(80, 30, ($speedX - 799) / 1000));
+        setTimeout(switchLegs, timeout);
+    }
+    switchLegs();
+
+  	$$self.$set = $$props => {
+  		if ('posY' in $$props) $$invalidate('posY', posY = $$props.posY);
+  		if ('isJumping' in $$props) $$invalidate('isJumping', isJumping = $$props.isJumping);
+  	};
+
+  	return { posY, isJumping, cycle, current, $posY };
+  }
+
+  class Character extends SvelteComponentDev {
+  	constructor(options) {
+  		super(options);
+  		init(this, options, instance, create_fragment, safe_not_equal, ["posY", "isJumping"]);
+
+  		const { ctx } = this.$$;
+  		const props = options.props || {};
+  		if (ctx.posY === undefined && !('posY' in props)) {
+  			console.warn("<Character> was created without expected prop 'posY'");
+  		}
+  		if (ctx.isJumping === undefined && !('isJumping' in props)) {
+  			console.warn("<Character> was created without expected prop 'isJumping'");
+  		}
+  	}
+
+  	get posY() {
+  		throw new Error("<Character>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+
+  	set posY(value) {
+  		throw new Error("<Character>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+
+  	get isJumping() {
+  		throw new Error("<Character>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+
+  	set isJumping(value) {
+  		throw new Error("<Character>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+  }
+
+  /* src/components/GroundImg.svelte generated by Svelte v3.4.0 */
+
+  const file$1 = "src/components/GroundImg.svelte";
+
+  function create_fragment$1(ctx) {
+  	var path;
+
+  	return {
+  		c: function create() {
+  			path = svg_element("path");
+  			attr(path, "d", "M387.996 0l-.381.53-.382.528h-.825l-.38.53-.382.529H0v.529h386.175l.381-.53.382-.528h.824l.382-.53.381-.529h2.052l.742.794.741.794h.846v.529h8.202v.529h.794v.529h7.144v-.529h.794v-.529h146.198l.38-.53.382-.529h.825l.381-.529.382-.529h2.052l.741.794.742.794h.846v.529h5.968l.382-.53.381-.529h.825l.381-.529.382-.529h2.052l.741.794.742.794h.846v.529H635v-.529h-59.002v-.53h-.846l-.742-.793-.74-.794h-3.112l-.38.53-.382.528h-.825l-.381.53-.382.529h-4.91v-.53h-.846l-.742-.793-.74-.794h-3.112l-.38.53-.382.528h-.825l-.381.53-.382.529H409.046v.529h-.794v.529h-5.556v-.529h-.794v-.529h-8.467v-.529h-.846l-.741-.794-.742-.794h-1.555zM29.104 3.704v.529h1.588v-.529h-.794zm50.8 0v.529h2.117v-.529h-1.058zm39.688 0v.529h1.587v-.529h-.794zm67.204 0v.529h2.117v-.529h-1.059zm117.475 0v.529h2.117v-.529h-1.059zm42.333 0v.529h1.588v-.529h-.794zm50.8 0v.529h2.117v-.529h-1.058zm39.688 0v.529h1.587v-.529h-.794zm67.204 0v.529h2.117v-.529h-1.059zm117.475 0v.529h2.117v-.529h-1.059zm-618.596.53v.528h2.117v-.529H4.233zm41.804 0v.528h.529v-.529h-.264zm8.996 0v.528h1.058v-.529h-.529zm42.333 0v.528h1.059v-.529h-.53zm17.463 0v.528h.529v-.529h-.265zm16.404 0v.528h.529v-.529h-.264zm39.688 0v.528h1.058v-.529h-.53zm21.695 0v.528h.53v-.529h-.265zm10.055 0v.528h1.587v-.529h-.794zm30.162 0v.528h1.588v-.529h-.794zm31.22 0v.528h1.588v-.529h-.793zm25.4 0v.528h.53v-.529h-.265zm2.118 0v.528h1.058v-.529h-.53zm7.408 0v.528h1.587v-.529h-.793zm22.754 0v.528h2.117v-.529h-1.059zm41.804 0v.528h.529v-.529h-.264zm8.996 0v.528h1.058v-.529h-.529zm42.333 0v.528h1.059v-.529h-.53zm17.463 0v.528h.529v-.529h-.265zm16.404 0v.528h.529v-.529h-.264zm39.688 0v.528h1.058v-.529h-.53zm21.695 0v.528h.53v-.529h-.265zm10.055 0v.528h1.587v-.529h-.794zm30.162 0v.528h1.588v-.529h-.794zm31.22 0v.528h1.588v-.529h-.793zm25.4 0v.528h.53v-.529h-.265zm2.117 0v.528h1.059v-.529h-.53zm7.409 0v.528h1.587v-.529h-.793zm-493.183.529v.529h.529v-.529h-.265zm35.983 0v.529h.529v-.529h-.265zm58.737 0v.529h1.059v-.529h-.53zm42.863 0v.529h.529v-.529h-.265zm12.7 0v.529h1.587v-.529h-.793zm167.216 0v.529h.53v-.529h-.265zm35.984 0v.529h.529v-.529h-.265zm58.737 0v.529h1.059v-.529h-.53zm42.863 0v.529h.529v-.529h-.265zm12.7 0v.529h1.587v-.529h-.793zm-568.325.529v.529h.529v-.529h-.265zm15.346 0v.529H38.1v-.529h-.53zm10.583 0v.529h2.117v-.529h-1.059zm24.87 0v.529h1.06v-.529h-.53zm21.697 0v.529h.529v-.529h-.265zm5.291 0v.529h1.588v-.529h-.794zm39.159 0v.529h.529v-.529h-.265zm2.116 0v.529h1.059v-.529h-.53zm8.467 0v.529h1.588v-.529h-.794zm96.308 0v.529h1.059v-.529h-.53zm57.15 0v.529h.529v-.529h-.264zm36.513 0v.529h.529v-.529h-.265zm15.346 0v.529h1.058v-.529h-.53zm10.583 0v.529h2.117v-.529h-1.059zm24.87 0v.529h1.06v-.529h-.53zm21.697 0v.529h.529v-.529h-.265zm5.291 0v.529h1.588v-.529h-.794zm39.159 0v.529h.529v-.529h-.265zm2.116 0v.529h1.059v-.529h-.53zm8.467 0v.529h1.587v-.529h-.793zm96.308 0v.529h1.059v-.529h-.53zm57.15 0v.529h.529v-.529h-.264zM0 5.82v.529h2.117V5.82H1.058zm7.408 0v.529h1.059V5.82h-.53zm17.992 0v.529h2.117V5.82h-1.059zm39.158 0v.529h.53V5.82h-.265zm112.713 0v.529h1.587V5.82h-.793zm42.862 0v.529h2.117V5.82h-1.058zm6.35 0v.529h.53V5.82h-.265zm50.8 0v.529h1.059V5.82h-.53zm33.867 0v.529h.529V5.82h-.264zm6.35 0v.529h2.117V5.82h-1.059zm7.408 0v.529h1.059V5.82h-.53zm17.992 0v.529h2.117V5.82h-1.059zm39.158 0v.529h.529V5.82h-.264zm112.713 0v.529h1.587V5.82h-.793zm42.862 0v.529h2.117V5.82h-1.058zm6.35 0v.529h.529V5.82h-.264zm50.8 0v.529h1.059V5.82h-.53zm33.867 0v.529h.529V5.82h-.264z");
+  			attr(path, "fill", "#525252");
+  			add_location(path, file$1, 0, 0, 0);
+  		},
+
+  		l: function claim(nodes) {
+  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, path, anchor);
+  		},
+
+  		p: noop,
+  		i: noop,
+  		o: noop,
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach(path);
+  			}
+  		}
+  	};
+  }
+
+  class GroundImg extends SvelteComponentDev {
+  	constructor(options) {
+  		super(options);
+  		init(this, options, null, create_fragment$1, safe_not_equal, []);
+  	}
+  }
+
+  /* src/components/Ground.svelte generated by Svelte v3.4.0 */
+
+  const file$2 = "src/components/Ground.svelte";
+
+  function create_fragment$2(ctx) {
+  	var svg0, g0, svg0_x_value, t0, svg1, g1, svg1_x_value, t1, svg2, g2, svg2_x_value, current;
+
+  	var groundimg0 = new GroundImg({ $$inline: true });
+
+  	var groundimg1 = new GroundImg({ $$inline: true });
+
+  	var groundimg2 = new GroundImg({ $$inline: true });
+
+  	return {
+  		c: function create() {
+  			svg0 = svg_element("svg");
+  			g0 = svg_element("g");
+  			groundimg0.$$.fragment.c();
+  			t0 = space();
+  			svg1 = svg_element("svg");
+  			g1 = svg_element("g");
+  			groundimg1.$$.fragment.c();
+  			t1 = space();
+  			svg2 = svg_element("svg");
+  			g2 = svg_element("g");
+  			groundimg2.$$.fragment.c();
+  			attr(g0, "transform", "scale(4,4)");
+  			add_location(g0, file$2, 14, 2, 355);
+  			attr(svg0, "width", "4000");
+  			attr(svg0, "height", "50");
+  			attr(svg0, "viewBox", "0 0 4000 50");
+  			attr(svg0, "x", svg0_x_value = ctx.$width - ctx.x +  ctx.gWidth);
+  			attr(svg0, "y", "805");
+  			add_location(svg0, file$2, 13, 0, 267);
+  			attr(g1, "transform", "scale(4,4)");
+  			add_location(g1, file$2, 19, 2, 493);
+  			attr(svg1, "width", "4000");
+  			attr(svg1, "height", "50");
+  			attr(svg1, "viewBox", "0 0 4000 50");
+  			attr(svg1, "x", svg1_x_value = ctx.$width - ctx.x);
+  			attr(svg1, "y", "805");
+  			add_location(svg1, file$2, 18, 0, 415);
+  			attr(g2, "transform", "scale(4,4)");
+  			add_location(g2, file$2, 24, 2, 640);
+  			attr(svg2, "width", "4000");
+  			attr(svg2, "height", "50");
+  			attr(svg2, "viewBox", "0 0 4000 50");
+  			attr(svg2, "x", svg2_x_value = ctx.$width - ctx.x - ctx.gWidth);
+  			attr(svg2, "y", "805");
+  			add_location(svg2, file$2, 23, 0, 553);
+  		},
+
+  		l: function claim(nodes) {
+  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, svg0, anchor);
+  			append(svg0, g0);
+  			mount_component(groundimg0, g0, null);
+  			insert(target, t0, anchor);
+  			insert(target, svg1, anchor);
+  			append(svg1, g1);
+  			mount_component(groundimg1, g1, null);
+  			insert(target, t1, anchor);
+  			insert(target, svg2, anchor);
+  			append(svg2, g2);
+  			mount_component(groundimg2, g2, null);
+  			current = true;
+  		},
+
+  		p: function update(changed, ctx) {
+  			if ((!current || changed.$width || changed.x) && svg0_x_value !== (svg0_x_value = ctx.$width - ctx.x +  ctx.gWidth)) {
+  				attr(svg0, "x", svg0_x_value);
+  			}
+
+  			if ((!current || changed.$width || changed.x) && svg1_x_value !== (svg1_x_value = ctx.$width - ctx.x)) {
+  				attr(svg1, "x", svg1_x_value);
+  			}
+
+  			if ((!current || changed.$width || changed.x) && svg2_x_value !== (svg2_x_value = ctx.$width - ctx.x - ctx.gWidth)) {
+  				attr(svg2, "x", svg2_x_value);
+  			}
+  		},
+
+  		i: function intro(local) {
+  			if (current) return;
+  			groundimg0.$$.fragment.i(local);
+
+  			groundimg1.$$.fragment.i(local);
+
+  			groundimg2.$$.fragment.i(local);
+
+  			current = true;
+  		},
+
+  		o: function outro(local) {
+  			groundimg0.$$.fragment.o(local);
+  			groundimg1.$$.fragment.o(local);
+  			groundimg2.$$.fragment.o(local);
+  			current = false;
+  		},
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach(svg0);
+  			}
+
+  			groundimg0.$destroy();
+
+  			if (detaching) {
+  				detach(t0);
+  				detach(svg1);
+  			}
+
+  			groundimg1.$destroy();
+
+  			if (detaching) {
+  				detach(t1);
+  				detach(svg2);
+  			}
+
+  			groundimg2.$destroy();
+  		}
+  	};
+  }
+
+  function instance$1($$self, $$props, $$invalidate) {
+  	let $posX, $width;
+
+  	validate_store(posX, 'posX');
+  	subscribe($$self, posX, $$value => { $posX = $$value; $$invalidate('$posX', $posX); });
+  	validate_store(width, 'width');
+  	subscribe($$self, width, $$value => { $width = $$value; $$invalidate('$width', $width); });
+
+  	
+    let x = 0;
+    let gWidth=635*4;
+
+    //$: console.log( $posX, x, $width);
+
+  	$$self.$$.update = ($$dirty = { $posX: 1 }) => {
+  		if ($$dirty.$posX) { $$invalidate('x', x = parseInt($posX, 10) % 4000); }
+  	};
+
+  	return { x, gWidth, $width };
+  }
+
+  class Ground extends SvelteComponentDev {
+  	constructor(options) {
+  		super(options);
+  		init(this, options, instance$1, create_fragment$2, safe_not_equal, []);
+  	}
+  }
+
+  var svg = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n   xmlns:cc=\"http://creativecommons.org/ns#\"\n   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   id=\"svg183\"\n   version=\"1.1\"\n   viewBox=\"0 0 25.761597 29.121805\"\n   height=\"29.121805mm\"\n   width=\"25.761597mm\">\n  <defs\n     id=\"defs177\" />\n  <metadata\n     id=\"metadata180\">\n    <rdf:RDF>\n      <cc:Work\n         rdf:about=\"\">\n        <dc:format>image/svg+xml</dc:format>\n        <dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />\n        <dc:title></dc:title>\n      </cc:Work>\n    </rdf:RDF>\n  </metadata>\n  <g\n     transform=\"translate(-92.952535,-134.27243)\"\n     id=\"layer1\">\n    <g\n       id=\"use149\"\n       transform=\"matrix(0.07000434,0,0,0.07000434,78.391632,128.06538)\">\n      <path\n         id=\"path193\"\n         d=\"m 208,456.66669 v -48 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -24 -24 h 8 8 v -16 -16 h 8 8 v -24 -24 h 8 8 v -32 -32 h 8 8 v -16 -16 h 16 16 v -8 -8 h 56 56 v 8 8 h 16 16 v 8 8 h 8 8 v 32 32 h 8 8 v 40 40 h 8 8 v 16 16 h 8 8 v 16 16 h 8 8 v 88 88 H 392 208 Z\"\n         style=\"fill:#8a8d8b\" />\n    </g>\n  </g>\n</svg>\n";
+
+  var svgScared = "<svg xmlns=\"http://www.w3.org/2000/svg\" id=\"svg265\" version=\"1.1\" viewBox=\"0 0 25.762 29.122\" height=\"110.067\" width=\"97.367\">\n  <g transform=\"translate(108.887 100.829)\" id=\"layer1\">\n    <g id=\"use151\" transform=\"matrix(.07 0 0 .07 -468.429 -107.036)\">\n      <path id=\"path236\" d=\"M5136 464.667v-40h16v-48h16v-32h16v-48h16v-48h16v-48h16v-64h16v-32h32v-16h112v16h32v16h16v64h16v96h16v32h16v32h16v160h-368zm224-144v-56h-16v-16h-48v48h-16v64h16v16h64zm-48 32v-8h-16v-32h16v-48h16v16h16v80h-32zm-16-144v-24h-48v48h48zm112 0v-24h-48v48h48z\" fill=\"#5c645e\"/>\n      <path d=\"M5296 248.667v48h-16v64h16v16h64v-112h-16v-16h-24zm16 16h16v16h16v80h-32v-16h-16v-32h16v-24z\" id=\"path238\" fill=\"#000\"/>\n      <path d=\"M5376 200.667v16h16v-16h-8z\" id=\"path240\" fill=\"#000\"/>\n      <path d=\"M5264 200.667v16h16v-16h-8z\" id=\"path242\" fill=\"#000\"/>\n    </g>\n  </g>\n</svg>\n";
+
+  /* src/components/Obstacle.svelte generated by Svelte v3.4.0 */
+
+  const file$3 = "src/components/Obstacle.svelte";
+
+  // (15:2) {:else}
+  function create_else_block(ctx) {
+  	var raw_before, raw_after;
+
+  	return {
+  		c: function create() {
+  			raw_before = element('noscript');
+  			raw_after = element('noscript');
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, raw_before, anchor);
+  			raw_before.insertAdjacentHTML("afterend", svg);
+  			insert(target, raw_after, anchor);
+  		},
+
+  		p: noop,
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach_between(raw_before, raw_after);
+  				detach(raw_before);
+  				detach(raw_after);
+  			}
+  		}
+  	};
+  }
+
+  // (13:2) {#if ($width - x) < 200}
+  function create_if_block(ctx) {
+  	var raw_before, raw_after;
+
+  	return {
+  		c: function create() {
+  			raw_before = element('noscript');
+  			raw_after = element('noscript');
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, raw_before, anchor);
+  			raw_before.insertAdjacentHTML("afterend", svgScared);
+  			insert(target, raw_after, anchor);
+  		},
+
+  		p: noop,
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach_between(raw_before, raw_after);
+  				detach(raw_before);
+  				detach(raw_after);
+  			}
+  		}
+  	};
+  }
+
+  function create_fragment$3(ctx) {
+  	var g, g_transform_value;
+
+  	function select_block_type(ctx) {
+  		if ((ctx.$width - ctx.x) < 200) return create_if_block;
+  		return create_else_block;
+  	}
+
+  	var current_block_type = select_block_type(ctx);
+  	var if_block = current_block_type(ctx);
+
+  	return {
+  		c: function create() {
+  			g = svg_element("g");
+  			if_block.c();
+  			attr(g, "transform", g_transform_value = `translate(${ctx.$width -ctx.x}, 705)`);
+  			add_location(g, file$3, 11, 0, 243);
+  		},
+
+  		l: function claim(nodes) {
+  			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+  		},
+
+  		m: function mount(target, anchor) {
+  			insert(target, g, anchor);
+  			if_block.m(g, null);
+  		},
+
+  		p: function update(changed, ctx) {
+  			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+  				if_block.p(changed, ctx);
+  			} else {
+  				if_block.d(1);
+  				if_block = current_block_type(ctx);
+  				if (if_block) {
+  					if_block.c();
+  					if_block.m(g, null);
+  				}
+  			}
+
+  			if ((changed.$width || changed.x) && g_transform_value !== (g_transform_value = `translate(${ctx.$width -ctx.x}, 705)`)) {
+  				attr(g, "transform", g_transform_value);
+  			}
+  		},
+
+  		i: noop,
+  		o: noop,
+
+  		d: function destroy(detaching) {
+  			if (detaching) {
+  				detach(g);
+  			}
+
+  			if_block.d();
+  		}
+  	};
+  }
+
+  function instance$2($$self, $$props, $$invalidate) {
+  	let $posX, $width;
+
+  	validate_store(posX, 'posX');
+  	subscribe($$self, posX, $$value => { $posX = $$value; $$invalidate('$posX', $posX); });
+  	validate_store(width, 'width');
+  	subscribe($$self, width, $$value => { $width = $$value; $$invalidate('$width', $width); });
+
+  	
+
+    let { distance } = $$props;
+
+    let x = 0;
+
+  	$$self.$set = $$props => {
+  		if ('distance' in $$props) $$invalidate('distance', distance = $$props.distance);
+  	};
+
+  	$$self.$$.update = ($$dirty = { $posX: 1, distance: 1 }) => {
+  		if ($$dirty.$posX || $$dirty.distance) { $$invalidate('x', x = Math.floor($posX) - distance); }
+  	};
+
+  	return { distance, x, $width };
+  }
+
+  class Obstacle extends SvelteComponentDev {
+  	constructor(options) {
+  		super(options);
+  		init(this, options, instance$2, create_fragment$3, safe_not_equal, ["distance"]);
+
+  		const { ctx } = this.$$;
+  		const props = options.props || {};
+  		if (ctx.distance === undefined && !('distance' in props)) {
+  			console.warn("<Obstacle> was created without expected prop 'distance'");
+  		}
+  	}
+
+  	get distance() {
+  		throw new Error("<Obstacle>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+
+  	set distance(value) {
+  		throw new Error("<Obstacle>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+  	}
+  }
 
   /* src/components/Dyno.svelte generated by Svelte v3.4.0 */
 
-  const file$2 = "src/components/Dyno.svelte";
+  const file$4 = "src/components/Dyno.svelte";
 
-  function create_fragment$2(ctx) {
-  	var div, svg, defs, pattern0, path0, pattern1, rect, path1, g, g_transform_value, svg_viewBox_value, current, dispose;
+  function create_fragment$4(ctx) {
+  	var div, svg, defs, pattern0, path0, pattern1, rect, path1, text0, t0, text1, t1, svg_viewBox_value, current, dispose;
 
   	add_render_callback(ctx.onwindowresize);
 
   	var character = new Character({
   		props: {
   		posY: posY,
-  		isJumping: ctx.isJumping
+  		isJumping: ctx.isJumping,
+  		isOver: !ctx.gameRunning
   	},
   		$$inline: true
   	});
 
-  	var ground = new Ground({ $$inline: true });
+  	var ground = new Ground({
+  		props: { posX: posX },
+  		$$inline: true
+  	});
+
+  	var obstacle0 = new Obstacle({
+  		props: {
+  		posX: posX,
+  		distance: 3000
+  	},
+  		$$inline: true
+  	});
+
+  	var obstacle1 = new Obstacle({
+  		props: {
+  		posX: posX,
+  		distance: 3500
+  	},
+  		$$inline: true
+  	});
+
+  	var obstacle2 = new Obstacle({
+  		props: {
+  		posX: posX,
+  		distance: 4000
+  	},
+  		$$inline: true
+  	});
+
+  	var obstacle3 = new Obstacle({
+  		props: {
+  		posX: posX,
+  		distance: 4300
+  	},
+  		$$inline: true
+  	});
 
   	return {
   		c: function create() {
@@ -3709,43 +4089,56 @@
   			pattern1 = svg_element("pattern");
   			rect = svg_element("rect");
   			path1 = svg_element("path");
+  			text0 = svg_element("text");
+  			t0 = text(ctx.$posX);
+  			text1 = svg_element("text");
+  			t1 = text(ctx.$speedX);
   			character.$$.fragment.c();
-  			g = svg_element("g");
   			ground.$$.fragment.c();
+  			obstacle0.$$.fragment.c();
+  			obstacle1.$$.fragment.c();
+  			obstacle2.$$.fragment.c();
+  			obstacle3.$$.fragment.c();
   			attr(path0, "d", "M 50 0 L 0 0 0 50");
   			attr(path0, "fill", "none");
   			attr(path0, "stroke", "gray");
   			attr(path0, "stroke-width", "0.5");
-  			add_location(path0, file$2, 100, 8, 2504);
+  			add_location(path0, file$4, 139, 8, 3611);
   			attr(pattern0, "id", "smallGrid");
   			attr(pattern0, "width", "50");
   			attr(pattern0, "height", "50");
   			attr(pattern0, "patternUnits", "userSpaceOnUse");
-  			add_location(pattern0, file$2, 99, 6, 2418);
+  			add_location(pattern0, file$4, 138, 6, 3525);
   			attr(rect, "width", "100");
   			attr(rect, "height", "100");
   			attr(rect, "fill", "url(#smallGrid)");
-  			add_location(rect, file$2, 103, 8, 2685);
+  			add_location(rect, file$4, 142, 8, 3792);
   			attr(path1, "d", "M 100 0 L 0 0 0 100");
   			attr(path1, "fill", "none");
   			attr(path1, "stroke", "gray");
   			attr(path1, "stroke-width", "1");
-  			add_location(path1, file$2, 104, 8, 2749);
+  			add_location(path1, file$4, 143, 8, 3856);
   			attr(pattern1, "id", "grid");
   			attr(pattern1, "width", "100");
   			attr(pattern1, "height", "100");
   			attr(pattern1, "patternUnits", "userSpaceOnUse");
-  			add_location(pattern1, file$2, 102, 6, 2602);
-  			add_location(defs, file$2, 98, 4, 2405);
-  			attr(g, "transform", g_transform_value = `translate(${-ctx.$posX}, 805), scale(4,4)`);
-  			add_location(g, file$2, 110, 4, 2990);
+  			add_location(pattern1, file$4, 141, 6, 3709);
+  			add_location(defs, file$4, 137, 4, 3512);
+  			attr(text0, "x", "20");
+  			attr(text0, "y", "35");
+  			attr(text0, "class", "small");
+  			add_location(text0, file$4, 146, 4, 3964);
+  			attr(text1, "x", "20");
+  			attr(text1, "y", "55");
+  			attr(text1, "class", "small");
+  			add_location(text1, file$4, 147, 4, 4017);
   			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
   			attr(svg, "class", "w-screen h-screen");
-  			attr(svg, "viewBox", svg_viewBox_value = `0 0 ${ctx.width || 0} ${ctx.height || 0}`);
+  			attr(svg, "viewBox", svg_viewBox_value = `0 0 ${ctx.$width || 0} ${ctx.$height || 0}`);
   			attr(svg, "shape-rendering", "crispEdges");
-  			add_location(svg, file$2, 96, 2, 2259);
+  			add_location(svg, file$4, 135, 2, 3364);
   			div.className = "flex items-center justify-center h-screen bg-gray-200";
-  			add_location(div, file$2, 95, 0, 2189);
+  			add_location(div, file$4, 134, 0, 3294);
 
   			dispose = [
   				listen(window, "keydown", ctx.handleKeydown),
@@ -3770,23 +4163,55 @@
   			append(defs, pattern1);
   			append(pattern1, rect);
   			append(pattern1, path1);
+  			append(svg, text0);
+  			append(text0, t0);
+  			append(svg, text1);
+  			append(text1, t1);
   			mount_component(character, svg, null);
-  			append(svg, g);
-  			mount_component(ground, g, null);
+  			mount_component(ground, svg, null);
+  			mount_component(obstacle0, svg, null);
+  			mount_component(obstacle1, svg, null);
+  			mount_component(obstacle2, svg, null);
+  			mount_component(obstacle3, svg, null);
   			current = true;
   		},
 
   		p: function update(changed, ctx) {
+  			if (!current || changed.$posX) {
+  				set_data(t0, ctx.$posX);
+  			}
+
+  			if (!current || changed.$speedX) {
+  				set_data(t1, ctx.$speedX);
+  			}
+
   			var character_changes = {};
   			if (changed.posY) character_changes.posY = posY;
   			if (changed.isJumping) character_changes.isJumping = ctx.isJumping;
+  			if (changed.gameRunning) character_changes.isOver = !ctx.gameRunning;
   			character.$set(character_changes);
 
-  			if ((!current || changed.$posX) && g_transform_value !== (g_transform_value = `translate(${-ctx.$posX}, 805), scale(4,4)`)) {
-  				attr(g, "transform", g_transform_value);
-  			}
+  			var ground_changes = {};
+  			if (changed.posX) ground_changes.posX = posX;
+  			ground.$set(ground_changes);
 
-  			if ((!current || changed.width || changed.height) && svg_viewBox_value !== (svg_viewBox_value = `0 0 ${ctx.width || 0} ${ctx.height || 0}`)) {
+  			var obstacle0_changes = {};
+  			if (changed.posX) obstacle0_changes.posX = posX;
+  			obstacle0.$set(obstacle0_changes);
+
+  			var obstacle1_changes = {};
+  			if (changed.posX) obstacle1_changes.posX = posX;
+  			obstacle1.$set(obstacle1_changes);
+
+  			var obstacle2_changes = {};
+  			if (changed.posX) obstacle2_changes.posX = posX;
+  			obstacle2.$set(obstacle2_changes);
+
+  			var obstacle3_changes = {};
+  			if (changed.posX) obstacle3_changes.posX = posX;
+  			obstacle3.$set(obstacle3_changes);
+
+  			if ((!current || changed.$width || changed.$height) && svg_viewBox_value !== (svg_viewBox_value = `0 0 ${ctx.$width || 0} ${ctx.$height || 0}`)) {
   				attr(svg, "viewBox", svg_viewBox_value);
   			}
   		},
@@ -3797,12 +4222,24 @@
 
   			ground.$$.fragment.i(local);
 
+  			obstacle0.$$.fragment.i(local);
+
+  			obstacle1.$$.fragment.i(local);
+
+  			obstacle2.$$.fragment.i(local);
+
+  			obstacle3.$$.fragment.i(local);
+
   			current = true;
   		},
 
   		o: function outro(local) {
   			character.$$.fragment.o(local);
   			ground.$$.fragment.o(local);
+  			obstacle0.$$.fragment.o(local);
+  			obstacle1.$$.fragment.o(local);
+  			obstacle2.$$.fragment.o(local);
+  			obstacle3.$$.fragment.o(local);
   			current = false;
   		},
 
@@ -3815,6 +4252,14 @@
 
   			ground.$destroy();
 
+  			obstacle0.$destroy();
+
+  			obstacle1.$destroy();
+
+  			obstacle2.$destroy();
+
+  			obstacle3.$destroy();
+
   			run_all(dispose);
   		}
   	};
@@ -3822,29 +4267,41 @@
 
   let floorY = 600;
 
-  let speedGround = 600;
-
   let jumpsLimit = 2;
 
-  function instance$1($$self, $$props, $$invalidate) {
-  	let $posY, $frameLength, $gravity, $posX, $jumpVector;
+  function lerp$1 (start, end, amt){
+      return (1-amt)*start+amt*end
+  }
+
+  function groundSpeed(posX) {
+      if (posX < 5000) return 800;
+      if (posX < 300000) return lerp$1(800, 1800, posX / 300000);
+      return 1800;
+  }
+
+  function instance$3($$self, $$props, $$invalidate) {
+  	let $posY, $speedX, $posX, $frameLength, $gravity, $width, $jumpVector, $height;
 
   	validate_store(posY, 'posY');
   	subscribe($$self, posY, $$value => { $posY = $$value; $$invalidate('$posY', $posY); });
+  	validate_store(speedX, 'speedX');
+  	subscribe($$self, speedX, $$value => { $speedX = $$value; $$invalidate('$speedX', $speedX); });
+  	validate_store(posX, 'posX');
+  	subscribe($$self, posX, $$value => { $posX = $$value; $$invalidate('$posX', $posX); });
   	validate_store(frameLength, 'frameLength');
   	subscribe($$self, frameLength, $$value => { $frameLength = $$value; $$invalidate('$frameLength', $frameLength); });
   	validate_store(gravity, 'gravity');
   	subscribe($$self, gravity, $$value => { $gravity = $$value; $$invalidate('$gravity', $gravity); });
-  	validate_store(posX, 'posX');
-  	subscribe($$self, posX, $$value => { $posX = $$value; $$invalidate('$posX', $posX); });
+  	validate_store(width, 'width');
+  	subscribe($$self, width, $$value => { $width = $$value; $$invalidate('$width', $width); });
   	validate_store(jumpVector, 'jumpVector');
   	subscribe($$self, jumpVector, $$value => { $jumpVector = $$value; $$invalidate('$jumpVector', $jumpVector); });
+  	validate_store(height, 'height');
+  	subscribe($$self, height, $$value => { $height = $$value; $$invalidate('$height', $height); });
 
   	
     let windowWidth;
     let windowHeight;
-    let width = 0;
-    let height = 0;
 
     let isJumping = false;
 
@@ -3856,21 +4313,25 @@
 
     let disableClick = false;
 
+    let gameRunning = true;
+
     $posY = floorY; posY.set($posY);
 
     const soundJump = new howler_2({
-        src: ['/assets/footstep05.ogg'],
+        src: ['/assets/footstep05.ogg', '/assets/footstep05.mp3'],
         volume: 0.2,
     });
 
     const render = (timestamp) => {
+        if (!gameRunning) return;
+
         if (!prevTime) $$invalidate('prevTime', prevTime = timestamp);
         $frameLength = timestamp - prevTime; frameLength.set($frameLength);
         $$invalidate('isJumping', isJumping = true);
         $$invalidate('speedVector', speedVector += $gravity * $frameLength/1000);
 
         $posY += speedVector * $frameLength/1000; posY.set($posY);
-        $posX += speedGround * $frameLength/1000; posX.set($posX);
+        $posX += parseInt($speedX * $frameLength/1000); posX.set($posX);
 
         if ($posY > floorY) {
             $$invalidate('speedVector', speedVector = 0);
@@ -3879,12 +4340,37 @@
             $$invalidate('jumpsCount', jumpsCount = 0);
         }
         $$invalidate('prevTime', prevTime = timestamp);
+
+        if (!checkCollision($posX, 3000, 100, 100)) {
+            $$invalidate('gameRunning', gameRunning = false);
+        }
+        if (!checkCollision($posX, 3500, 100, 100)) {
+            $$invalidate('gameRunning', gameRunning = false);
+        }
+        if (!checkCollision($posX, 4000, 100, 100)) {
+            $$invalidate('gameRunning', gameRunning = false);
+        }
+        if (!checkCollision($posX, 4300, 100, 100)) {
+            $$invalidate('gameRunning', gameRunning = false);
+        }
         requestAnimationFrame(render);
     };
 
     requestAnimationFrame(render);
 
+    function checkCollision(posX,distance,w, height) {
+        console.log(posX - distance - $width, -2 * w,  -3 * w);
+        if(posX - distance - $width > -2*w) {
+            if (posX - distance - $width < -1*w){
+                if ($posY >500) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     const handleKeydown = (e) => {
+        if (!gameRunning) return;
         if (e.type === 'touchstart') $$invalidate('disableClick', disableClick = true);
         if (e.type === 'click' && disableClick) return;
 
@@ -3903,6 +4389,7 @@
         }
     };
     const handleKeyup = (e) => {
+        if (!gameRunning) return;
         $$invalidate('canJump', canJump = true);
     };
 
@@ -3911,21 +4398,23 @@
   		windowHeight = window.innerHeight; $$invalidate('windowHeight', windowHeight);
   	}
 
-  	$$self.$$.update = ($$dirty = { windowWidth: 1, windowHeight: 1, $posX: 1 }) => {
-  		if ($$dirty.windowWidth) { $$invalidate('width', width = windowWidth < 800 ? 800 : windowWidth); }
-  		if ($$dirty.windowHeight) { $$invalidate('height', height = windowHeight); }
-  		if ($$dirty.$posX) { if ($posX > 1650) { $posX = 0; posX.set($posX); } }
+  	$$self.$$.update = ($$dirty = { $posX: 1, windowWidth: 1, windowHeight: 1 }) => {
+  		if ($$dirty.$posX) { $speedX = parseInt(groundSpeed($posX), 10); speedX.set($speedX); }
+  		if ($$dirty.windowWidth) { $width = windowWidth < 800 ? 800 : windowWidth; width.set($width); }
+  		if ($$dirty.windowHeight) { $height = windowHeight; height.set($height); }
   	};
 
   	return {
   		windowWidth,
   		windowHeight,
-  		width,
-  		height,
   		isJumping,
+  		gameRunning,
   		handleKeydown,
   		handleKeyup,
+  		$speedX,
   		$posX,
+  		$width,
+  		$height,
   		onwindowresize
   	};
   }
@@ -3933,13 +4422,13 @@
   class Dyno extends SvelteComponentDev {
   	constructor(options) {
   		super(options);
-  		init(this, options, instance$1, create_fragment$2, safe_not_equal, []);
+  		init(this, options, instance$3, create_fragment$4, safe_not_equal, []);
   	}
   }
 
   /* src/components/Router.svelte generated by Svelte v3.4.0 */
 
-  function create_fragment$3(ctx) {
+  function create_fragment$5(ctx) {
   	return {
   		c: noop,
 
@@ -3955,7 +4444,7 @@
   	};
   }
 
-  function instance$2($$self) {
+  function instance$4($$self) {
   	/**Renderless component to act as a simple router using the History API
      *On browser load, parse the url and extract parameters
      */
@@ -3983,15 +4472,15 @@
   class Router extends SvelteComponentDev {
   	constructor(options) {
   		super(options);
-  		init(this, options, instance$2, create_fragment$3, safe_not_equal, []);
+  		init(this, options, instance$4, create_fragment$5, safe_not_equal, []);
   	}
   }
 
   /* src/components/Settings.svelte generated by Svelte v3.4.0 */
 
-  const file$3 = "src/components/Settings.svelte";
+  const file$5 = "src/components/Settings.svelte";
 
-  function create_fragment$4(ctx) {
+  function create_fragment$6(ctx) {
   	var div12, div0, t0, div11, button0, svg0, path0, t1, span, t3, div10, div2, p, t5, div1, svg1, path1, t6, div5, input0, t7, div4, div3, t8_value = Math.round(ctx.$jumpVector), t8, t9, small0, t11, div8, input1, t12, div7, div6, t13, t14, small1, t16, div9, button1, t18, button2, div12_class_value, dispose;
 
   	return {
@@ -4043,69 +4532,69 @@
   			button2 = element("button");
   			button2.textContent = "Close";
   			div0.className = "modal-overlay absolute w-full h-full bg-gray-900 opacity-50";
-  			add_location(div0, file$3, 15, 2, 357);
+  			add_location(div0, file$5, 15, 2, 357);
   			attr(path0, "d", "M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z");
-  			add_location(path0, file$3, 21, 8, 838);
+  			add_location(path0, file$5, 21, 8, 838);
   			attr(svg0, "class", "fill-current text-white");
   			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
   			attr(svg0, "width", "18");
   			attr(svg0, "height", "18");
   			attr(svg0, "viewBox", "0 0 18 18");
-  			add_location(svg0, file$3, 20, 6, 714);
+  			add_location(svg0, file$5, 20, 6, 714);
   			span.className = "text-sm";
-  			add_location(span, file$3, 23, 6, 990);
+  			add_location(span, file$5, 23, 6, 990);
   			button0.className = "modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50";
-  			add_location(button0, file$3, 19, 4, 551);
+  			add_location(button0, file$5, 19, 4, 551);
   			p.className = "text-2xl font-bold";
-  			add_location(p, file$3, 30, 8, 1257);
+  			add_location(p, file$5, 30, 8, 1257);
   			attr(path1, "d", "M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z");
-  			add_location(path1, file$3, 33, 12, 1526);
+  			add_location(path1, file$5, 33, 12, 1526);
   			attr(svg1, "class", "fill-current text-black");
   			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
   			attr(svg1, "width", "18");
   			attr(svg1, "height", "18");
   			attr(svg1, "viewBox", "0 0 18 18");
-  			add_location(svg1, file$3, 32, 10, 1398);
+  			add_location(svg1, file$5, 32, 10, 1398);
   			div1.className = "modal-close cursor-pointer z-50";
-  			add_location(div1, file$3, 31, 8, 1313);
+  			add_location(div1, file$5, 31, 8, 1313);
   			div2.className = "flex justify-between items-center pb-3";
-  			add_location(div2, file$3, 29, 6, 1196);
+  			add_location(div2, file$5, 29, 6, 1196);
   			input0.className = "w-full";
   			attr(input0, "type", "range");
   			input0.min = -3000;
   			input0.max = 3000;
   			input0.step = 1;
-  			add_location(input0, file$3, 40, 8, 1758);
-  			add_location(div3, file$3, 48, 10, 1965);
-  			add_location(small0, file$3, 51, 10, 2036);
+  			add_location(input0, file$5, 40, 8, 1758);
+  			add_location(div3, file$5, 48, 10, 1965);
+  			add_location(small0, file$5, 51, 10, 2036);
   			set_style(div4, "padding-left", "10px");
-  			add_location(div4, file$3, 47, 8, 1921);
+  			add_location(div4, file$5, 47, 8, 1921);
   			div5.className = "w-full";
-  			add_location(div5, file$3, 39, 6, 1729);
+  			add_location(div5, file$5, 39, 6, 1729);
   			input1.className = "w-full";
   			attr(input1, "type", "range");
   			input1.min = -3000;
   			input1.max = 3000;
   			input1.step = 1;
-  			add_location(input1, file$3, 55, 8, 2125);
-  			add_location(div6, file$3, 63, 10, 2329);
-  			add_location(small1, file$3, 66, 10, 2383);
+  			add_location(input1, file$5, 55, 8, 2125);
+  			add_location(div6, file$5, 63, 10, 2329);
+  			add_location(small1, file$5, 66, 10, 2383);
   			set_style(div7, "padding-left", "10px");
-  			add_location(div7, file$3, 62, 8, 2285);
+  			add_location(div7, file$5, 62, 8, 2285);
   			div8.className = "w-full";
-  			add_location(div8, file$3, 54, 6, 2096);
+  			add_location(div8, file$5, 54, 6, 2096);
   			button1.className = "px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2";
-  			add_location(button1, file$3, 71, 8, 2504);
+  			add_location(button1, file$5, 71, 8, 2504);
   			button2.className = "modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400";
-  			add_location(button2, file$3, 72, 8, 2669);
+  			add_location(button2, file$5, 72, 8, 2669);
   			div9.className = "flex justify-end pt-2";
-  			add_location(div9, file$3, 70, 6, 2460);
+  			add_location(div9, file$5, 70, 6, 2460);
   			div10.className = "modal-content py-4 text-left px-6";
-  			add_location(div10, file$3, 27, 4, 1123);
+  			add_location(div10, file$5, 27, 4, 1123);
   			div11.className = "modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto";
-  			add_location(div11, file$3, 17, 2, 440);
+  			add_location(div11, file$5, 17, 2, 440);
   			div12.className = div12_class_value = `modal ${ctx.$isOpen ? '' : 'opacity-0 pointer-events-none'} fixed w-full h-full top-0 left-0 flex items-center justify-center`;
-  			add_location(div12, file$3, 12, 0, 188);
+  			add_location(div12, file$5, 12, 0, 188);
 
   			dispose = [
   				listen(button0, "click", ctx.handleCloseButton),
@@ -4204,7 +4693,7 @@
   	};
   }
 
-  function instance$3($$self, $$props, $$invalidate) {
+  function instance$5($$self, $$props, $$invalidate) {
   	let $isOpen, $jumpVector, $gravity;
 
   	validate_store(jumpVector, 'jumpVector');
@@ -4248,7 +4737,7 @@
   class Settings extends SvelteComponentDev {
   	constructor(options) {
   		super(options);
-  		init(this, options, instance$3, create_fragment$4, safe_not_equal, ["isOpen"]);
+  		init(this, options, instance$5, create_fragment$6, safe_not_equal, ["isOpen"]);
 
   		const { ctx } = this.$$;
   		const props = options.props || {};
@@ -4268,10 +4757,10 @@
 
   /* src/App.svelte generated by Svelte v3.4.0 */
 
-  const file$4 = "src/App.svelte";
+  const file$6 = "src/App.svelte";
 
-  function create_fragment$5(ctx) {
-  	var div0, t0, div1, button, small, t1_value = ctx.$frameLength.toFixed(0), t1, t2, svg, path, t3, audio0, source0, t4, audio1, source1, t5, main, t6, t7, current, dispose;
+  function create_fragment$7(ctx) {
+  	var div0, t0, div1, button, small, t1_value = ctx.$frameLength.toFixed(0), t1, t2, svg, path, t3, main, t4, t5, current, dispose;
 
   	var router = new Router({ $$inline: true });
 
@@ -4297,45 +4786,29 @@
   			svg = svg_element("svg");
   			path = svg_element("path");
   			t3 = space();
-  			audio0 = element("audio");
-  			source0 = element("source");
-  			t4 = space();
-  			audio1 = element("audio");
-  			source1 = element("source");
-  			t5 = space();
   			main = element("main");
   			router.$$.fragment.c();
-  			t6 = space();
+  			t4 = space();
   			settings.$$.fragment.c();
-  			t7 = space();
+  			t5 = space();
   			dyno.$$.fragment.c();
   			set_style(div0, "display", "none");
-  			add_location(div0, file$4, 37, 0, 1273);
-  			add_location(small, file$4, 43, 2, 1453);
+  			add_location(div0, file$6, 37, 0, 1273);
+  			add_location(small, file$6, 43, 2, 1453);
   			attr(path, "class", "heroicon-ui");
   			attr(path, "d", "M9 4.58V4c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v.58a8 8 0 0 1 1.92 1.11l.5-.29a2 2 0 0 1 2.74.73l1 1.74a2 2 0 0 1-.73 2.73l-.5.29a8.06 8.06 0 0 1 0 2.22l.5.3a2 2 0 0 1 .73 2.72l-1 1.74a2 2 0 0 1-2.73.73l-.5-.3A8 8 0 0 1 15 19.43V20a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-.58a8 8 0 0 1-1.92-1.11l-.5.29a2 2 0 0 1-2.74-.73l-1-1.74a2 2 0 0 1 .73-2.73l.5-.29a8.06 8.06 0 0 1 0-2.22l-.5-.3a2 2 0 0 1-.73-2.72l1-1.74a2 2 0 0 1 2.73-.73l.5.3A8 8 0 0 1 9 4.57zM7.88 7.64l-.54.51-1.77-1.02-1 1.74 1.76 1.01-.17.73a6.02 6.02 0 0 0 0 2.78l.17.73-1.76 1.01 1 1.74 1.77-1.02.54.51a6 6 0 0 0 2.4 1.4l.72.2V20h2v-2.04l.71-.2a6 6 0 0 0 2.41-1.4l.54-.51 1.77 1.02 1-1.74-1.76-1.01.17-.73a6.02 6.02 0 0 0 0-2.78l-.17-.73 1.76-1.01-1-1.74-1.77 1.02-.54-.51a6 6 0 0 0-2.4-1.4l-.72-.2V4h-2v2.04l-.71.2a6 6 0 0 0-2.41 1.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z");
-  			add_location(path, file$4, 44, 85, 1579);
+  			add_location(path, file$6, 44, 85, 1579);
   			attr(svg, "xmlns", "http://www.w3.org/2000/svg");
   			attr(svg, "viewBox", "0 0 24 24");
   			attr(svg, "width", "24");
   			attr(svg, "height", "24");
-  			add_location(svg, file$4, 44, 2, 1496);
+  			add_location(svg, file$6, 44, 2, 1496);
   			button.className = "relative bg-transparent border ";
-  			add_location(button, file$4, 39, 2, 1348);
+  			add_location(button, file$6, 39, 2, 1348);
   			div1.className = "absolute";
-  			add_location(div1, file$4, 38, 0, 1323);
-  			source0.src = "/assets/mp3/Jump3.mp3";
-  			source0.type = "audio/mpeg";
-  			add_location(source0, file$4, 49, 1, 2515);
-  			audio0.preload = "auto";
-  			add_location(audio0, file$4, 48, 0, 2491);
-  			source1.src = "/assets/mp3/Hero_Hurt.mp3";
-  			source1.type = "audio/mpeg";
-  			add_location(source1, file$4, 52, 1, 2603);
-  			audio1.preload = "auto";
-  			add_location(audio1, file$4, 51, 0, 2579);
+  			add_location(div1, file$6, 38, 0, 1323);
   			main.className = "overflow-hidden";
-  			add_location(main, file$4, 54, 0, 2671);
+  			add_location(main, file$6, 47, 0, 2490);
   			dispose = listen(button, "click", stop_propagation(ctx.onSettingsClick));
   		},
 
@@ -4355,17 +4828,11 @@
   			append(button, svg);
   			append(svg, path);
   			insert(target, t3, anchor);
-  			insert(target, audio0, anchor);
-  			append(audio0, source0);
-  			insert(target, t4, anchor);
-  			insert(target, audio1, anchor);
-  			append(audio1, source1);
-  			insert(target, t5, anchor);
   			insert(target, main, anchor);
   			mount_component(router, main, null);
-  			append(main, t6);
+  			append(main, t4);
   			mount_component(settings, main, null);
-  			append(main, t7);
+  			append(main, t5);
   			mount_component(dyno, main, null);
   			current = true;
   		},
@@ -4405,10 +4872,6 @@
   				detach(t0);
   				detach(div1);
   				detach(t3);
-  				detach(audio0);
-  				detach(t4);
-  				detach(audio1);
-  				detach(t5);
   				detach(main);
   			}
 
@@ -4423,7 +4886,7 @@
   	};
   }
 
-  function instance$4($$self, $$props, $$invalidate) {
+  function instance$6($$self, $$props, $$invalidate) {
   	let $isSettingsOpen, $frameLength;
 
   	validate_store(isSettingsOpen, 'isSettingsOpen');
@@ -4471,7 +4934,7 @@
   class App extends SvelteComponentDev {
   	constructor(options) {
   		super(options);
-  		init(this, options, instance$4, create_fragment$5, safe_not_equal, []);
+  		init(this, options, instance$6, create_fragment$7, safe_not_equal, []);
   	}
   }
 
