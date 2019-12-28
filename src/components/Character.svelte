@@ -19,6 +19,6 @@
 
 </script>
 
-<g transform={`translate(100, ${$posY})`}>
+<!-- g transform={`translate(100, ${$posY})`}>
   <use xlink:href={isJumping ? '#running' : cycle[current]} transform={`scale(0.5, 0.5)`}/>
-</g>
+</g -->

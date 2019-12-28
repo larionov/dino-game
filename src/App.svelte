@@ -1,9 +1,19 @@
 <script>
-  import Sprites from './assets/Sprites-project.svg';
+  import * as PIXI from 'pixi.js'
+  let canvas, app, resources, loaded = false;
+
+  import { onMount } from 'svelte';
   import Dyno from './components/Dyno.svelte';
-  import Router from './components/Router.svelte';
+
+  console.log(Dyno);
+
+  const soundStart = new Howl({
+      src: ['/assets/footstep05.ogg', '/assets/footstep05.mp3'],
+      volume: 0.2,
+  });
+
   import Settings from './components/Settings.svelte';
-  import { isSettingsOpen, frameLength } from './store/store.js';
+  import { isSettingsOpen, frameLength, gameStarted } from './store/store.js';
 
   const onSettingsClick = () => {
 
@@ -32,11 +42,40 @@
           );
       });
   }
+  onMount(() => {
+      PIXI.settings.SCALE_MODE =  PIXI.SCALE_MODES.NEAREST;
+      app = new PIXI.Application({
+          backgroundColor: 0x1099bb,
+      });
+      PIXI.Loader.shared.add([
+          "../assets/sprites/spritesheet.json",
+          "../assets/emitter.json",
+          "../assets/ground.png",
+          "../assets/ground2.png",
+      ]).load(setup);
+
+      function setup() {
+          resources = PIXI.Loader.shared.resources;
+          loaded = true;
+      }
+  });
+  const handleKeyup = (e) => {
+      if (loaded && !$gameStarted) {
+          console.log(e);
+          soundStart.play();
+          $gameStarted = true;
+      }
+  };
+
 </script>
+<svelte:window
+  on:keyup={handleKeyup}
+  on:click={handleKeyup}
+  on:touchend={handleKeyup}
+  />
 
 <style lang="postcss">
 </style>
-<div style="display: none">{@html Sprites }</div>
 <div class="absolute">
   <button
     on:click|stopPropagation={onSettingsClick}
@@ -47,7 +86,15 @@
   </button>
 </div>
 <main class="overflow-hidden">
-  <Router/>
   <Settings isOpen={isSettingsOpen} onClose={onSettingsClose}/>
-  <Dyno />
 </main>
+{#if loaded}
+
+{#if !$gameStarted}
+<div class="container mx-auto px-4 text-center pt-20 text-3xl">
+  <h1>Нажмите любую кнопку чтобы начать игру</h1>
+</div>
+{:else}
+<Dyno app={app} resources={resources} />
+{/if}
+{/if}

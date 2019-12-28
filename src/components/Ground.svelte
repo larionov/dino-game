@@ -11,7 +11,7 @@
   //$: console.log( $posX, x, $width);
 </script>
 
-<svg width="4000" height="50" viewBox="0 0 4000 50" x={$width - x +  gWidth} y="805">
+<!--svg width="4000" height="50" viewBox="0 0 4000 50" x={$width - x +  gWidth} y="805">
   <g transform="scale(4,4)">
      <GroundImg />
   </g>
@@ -25,4 +25,4 @@
   <g transform="scale(4,4)">
      <GroundImg />
   </g>
-</svg>
+</svg -->

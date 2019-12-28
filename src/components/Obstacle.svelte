@@ -9,10 +9,10 @@
   $: x = Math.floor($posX) - distance;
 </script>
 
-<g transform={`translate(${$width -x}, 705)`}>
+<!--g transform={`translate(${$width -x}, 705)`}>
   {#if ($width - x) < 200}
     {@html svgScared}
   {:else}
     {@html svg}
   {/if}
-</g>
+</g -->
